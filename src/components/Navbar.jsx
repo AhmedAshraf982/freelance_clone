@@ -5,7 +5,7 @@ import { FaBars } from "react-icons/fa";
 
 const Nav = styled.nav`
   height: 80px;
-  background-color: grey;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +13,7 @@ const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 10;
+  box-shadow: 0px 15px 10px -15px #aef5ff;
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
   }
@@ -28,8 +29,7 @@ const NavbarContainer = styled.div`
   position: relative;
 `;
 
-const Logo = styled(LinkR)`
-  color: green;
+const Logo = styled.img`
   display: flex;
   justify-self: flex-start;
   align-items: center;
@@ -68,15 +68,16 @@ const NavItem = styled.li`
 `;
 
 const NavLinks = styled(LinkS)`
-  color: black;
+  color: #94dbf8;
   display: flex;
   align-items: center;
   padding: 0 1rem;
   height: 100%;
+  font-size: 1.1rem;
   text-decoration: none;
   cursor: pointer;
   &:active {
-    border-bottom: 3px solid #01bf71;
+    border-bottom: 3px solid #94dbf8;
   }
 `;
 
@@ -91,10 +92,10 @@ const NavButton = styled.div`
 
 const Button = styled.button`
   outline: none;
+  background-color: #fff;
   font-size: 16px;
-  color: #010636;
+  color: #aef5ff;
   margin-left: 1rem;
-  white-space: nowrap;
   padding: 10px 22px;
   border-radius: 50px;
   cursor: pointer;
@@ -103,8 +104,8 @@ const Button = styled.button`
   text-decoration: none;
   &:hover {
     transition: all 0.2s ease-in-out;
-    background-color: #fff;
-    color: #010636;
+    background-color: #aef5ff;
+    color: #fff;
   }
 `;
 
@@ -122,7 +123,7 @@ const Navbar = (props) => {
     <>
       <Nav>
         <NavbarContainer>
-          <Logo to="/">fiverr</Logo>
+          <Logo src="3.png" alt="logo" />
           <MobileIcon>
             <FaBars />
           </MobileIcon>

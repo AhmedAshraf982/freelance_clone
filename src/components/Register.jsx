@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Modalbackground = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: rgba(200, 200, 200, 0.5);
+  background-color: transparent;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -40,7 +40,7 @@ const CloseButton = styled.button`
   right: 2rem;
   border: none;
   background-color: transparent;
-  color: #006400;
+  color: #aef5ff;
   cursor: pointer;
   @media screen and (max-width: 950px) {
     top: 2rem;
@@ -52,7 +52,7 @@ const Heading = styled.h4`
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  color: #38b000;
+  color: #aef5ff;
   margin-top: 10px;
   @media screen and (max-width: 950px) {
     margin-top: 50px;
@@ -76,10 +76,10 @@ const InputField = styled.input`
   margin: 1rem 3.5rem;
   padding: 0.6rem 1.2rem;
   opacity: 0.8;
-  border: 1px solid #70e000;
+  border: 1px solid #aef5ff;
   border-radius: 1.4rem;
   &:hover {
-    border: 1px #38b000 solid;
+    border: 1px #94dbf8 solid;
   }
   @media screen and (max-width: 950px) {
     margin: 0.5rem 2rem;
@@ -103,10 +103,10 @@ const Button = styled.button`
   margin: 0.8rem auto;
   cursor: pointer;
   color: #fff;
-  background-color: #38b000;
+  background-color: #aef5ff;
   &:hover {
     transition: 0.2s all ease-in;
-    background-color: #006400;
+    background-color: #6db5d1;
   }
 `;
 
@@ -118,9 +118,9 @@ const Text = styled.p`
 
 const Link = styled.a`
   cursor: pointer;
-  color: green;
+  color: #aef5ff;
   &:hover {
-    border-bottom: 1px solid green;
+    border-bottom: 1px solid #6db5d1;
   }
 `;
 
@@ -140,10 +140,10 @@ const InputFirst = styled.input`
   opacity: 0.8;
   border: none;
   border-radius: 1.4rem;
-  border: 1px solid #70e000;
+  border: 1px solid #aef5ff;
   border-radius: 1.4rem;
   &:hover {
-    border: 1px #38b000 solid;
+    border: 1px #94dbf8 solid;
   }
   @media screen and (max-width: 950px) {
     margin: 0.5rem 2rem;
@@ -166,10 +166,10 @@ const InputLast = styled.input`
   padding: 0.6rem 1.2rem;
   opacity: 0.8;
   border-radius: 1.4rem;
-  border: 1px solid #70e000;
+  border: 1px solid #aef5ff;
   border-radius: 1.4rem;
   &:hover {
-    border: 1px #38b000 solid;
+    border: 1px #94dbf8 solid;
   }
   @media screen and (max-width: 950px) {
     margin: 0.5rem 2rem;
@@ -183,6 +183,8 @@ const InputLast = styled.input`
     width: auto;
   }
 `;
+
+const LogoImg = styled.img``;
 
 const Register = (props) => {
   return (

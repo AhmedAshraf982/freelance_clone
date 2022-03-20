@@ -15,9 +15,9 @@ function App() {
   const [openSignin, setOpenSignin] = useState(false);
   const [openSignup, setOpenSignup] = useState(false);
   return (
-    <Router>
+    <>
       {!openSignup && !openSignin && (
-        <>
+        <Router>
           <Navbar
             closeLoginModal={setOpenSignin}
             closeSignupModal={setOpenSignup}
@@ -28,12 +28,12 @@ function App() {
           <SubmitProposal />  */}
           {/* <Message /> */}
           <Footer />
-        </>
+        </Router>
       )}
 
       {openSignin && <Login closeModal={setOpenSignin} />}
       {openSignup && <Register closeModal={setOpenSignup} />}
-    </Router>
+    </>
   );
 }
 
