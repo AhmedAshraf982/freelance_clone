@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router } from "react-router-dom";
+import Card from "./components/Card";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import { useState } from "react";
+import Footer from "./components/Footer";
+import JobDetails from "./components/JobDetails";
+import SubmitProposal from "./components/SubmitProposal";
+import Header from "./components/Header";
+import UserDashBoard from "./components/UserDashBoard";
+import Message from "./components/Message";
 
 function App() {
+  const [openSignin, setOpenSignin] = useState(false);
+  const [openSignup, setOpenSignup] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {!openSignup && !openSignin && (
+        <>
+          <Navbar
+            closeLoginModal={setOpenSignin}
+            closeSignupModal={setOpenSignup}
+          />
+          <Header />
+          <Card />
+          {/* <JobDetails />
+          <SubmitProposal />  */}
+          {/* <Message /> */}
+          <Footer />
+        </>
+      )}
+
+      {openSignin && <Login closeModal={setOpenSignin} />}
+      {openSignup && <Register closeModal={setOpenSignup} />}
+    </Router>
   );
 }
 
