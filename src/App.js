@@ -10,29 +10,43 @@ import SubmitProposal from "./components/SubmitProposal";
 import Header from "./components/Header";
 import UserDashBoard from "./components/UserDashBoard";
 import Message from "./components/Message";
+import NavSideBar from "./components/NavSideBar";
 
 function App() {
   const [openSignin, setOpenSignin] = useState(false);
   const [openSignup, setOpenSignup] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <>
-      {!openSignup && !openSignin && (
-        <Router>
-          <Navbar
-            closeLoginModal={setOpenSignin}
-            closeSignupModal={setOpenSignup}
-          />
-          <Header />
-          <Card />
-          {/* <JobDetails />
-          <SubmitProposal />  */}
-          {/* <Message /> */}
-          <Footer />
-        </Router>
-      )}
+      <Router>
+        <Navbar
+          closeLoginModal={setOpenSignin}
+          closeSignupModal={setOpenSignup}
+          toggle={toggle}
+        />
 
-      {openSignin && <Login closeModal={setOpenSignin} />}
-      {openSignup && <Register closeModal={setOpenSignup} />}
+        <NavSideBar
+          isOpen={isOpen}
+          toggle={toggle}
+          closeLoginModal={setOpenSignin}
+          closeSignupModal={setOpenSignup}
+        />
+        <Header />
+        <UserDashBoard />
+        {/* <Card /> */}
+        {/* <JobDetails />
+          <SubmitProposal />
+          <UserDashBoard />
+          <Message /> */}
+        <Footer />
+      </Router>
+
+      <Login closeModal={setOpenSignin} openSignin={openSignin} />
+      <Register closeModal={setOpenSignup} openSignup={openSignup} />
     </>
   );
 }

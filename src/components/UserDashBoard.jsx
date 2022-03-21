@@ -11,6 +11,12 @@ const Container = styled.div`
   grid-row-gap: 0px;
   width: 80%;
   margin: 1rem auto;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1rem 0;
+  }
 `;
 
 const UserDashBoard = () => {

@@ -3,13 +3,20 @@ import axios from "axios";
 import styled from "styled-components";
 
 const Modalbackground = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  transition: 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.1);
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 0;
+  left: 0;
+  transition: 0.3s ease-in-out;
+  opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
+  top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
 `;
 
 const Container = styled.div`
@@ -149,7 +156,10 @@ const Login = (props) => {
 
   return (
     <>
-      <Modalbackground>
+      <Modalbackground
+        onClick={() => props.closeModal(false)}
+        isOpen={props.openSignin}
+      >
         <Container>
           <CloseButton onClick={() => props.closeModal(false)}>X</CloseButton>
           <Heading>Sign In</Heading>

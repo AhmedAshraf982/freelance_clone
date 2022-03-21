@@ -1,7 +1,10 @@
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
 import { FaBars } from "react-icons/fa";
+import { AiFillSetting } from "react-icons/ai";
+import { BiLogOut } from "react-icons/bi";
 
 const Nav = styled.nav`
   height: 80px;
@@ -15,6 +18,7 @@ const Nav = styled.nav`
   z-index: 10;
   box-shadow: 0px 15px 10px -15px #aef5ff;
   @media screen and (max-width: 960px) {
+    height: 60px;
     transition: 0.8s all ease;
   }
 `;
@@ -27,6 +31,10 @@ const NavbarContainer = styled.div`
   padding: 0 1.5rem;
   max-width: 1100px;
   position: relative;
+  @media screen and (max-width: 960px) {
+    height: 60px;
+    transition: 0.8s all ease;
+  }
 `;
 
 const Logo = styled.img`
@@ -118,14 +126,56 @@ const ImageIcon = styled.img`
   cursor: pointer;
 `;
 
+const DropDown = styled.div`
+  position: absolute;
+  top: 4rem;
+  right: 10rem;
+  background: paleturquoise;
+  border-radius: 5px;
+  width: auto;
+  min-width: 100px;
+`;
+
+const UserName = styled.h3`
+  text-align: center;
+  font-size: 1rem;
+  margin: 1rem 0 0.5rem 0;
+  border-bottom: 1px solid black;
+`;
+
+const ListMenu = styled.ul`
+  list-style: none;
+  margin: 0 1rem;
+`;
+
+const List = styled.li`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  font-size: 1.1rem;
+`;
+
+const SettingLogo = styled.div`
+  font-size: 1.2rem;
+  cursor: pointer;
+`;
+
+const LogOutLogo = styled.div`
+  font-size: 1.2rem;
+  cursor: pointer;
+`;
+
 const Navbar = (props) => {
+  const [dropshow, setDropShow] = useState(false);
   return (
     <>
       <Nav>
         <NavbarContainer>
-          <Logo src="3.png" alt="logo" />
-          <MobileIcon>
-            <FaBars />
+          <Logo src="./logo.png" alt="logo" />
+          <MobileIcon onClick={props.toggle}>
+            <FaBars color="#aef5ff" />
           </MobileIcon>
           <NavMenu>
             <NavItem>
@@ -138,7 +188,6 @@ const Navbar = (props) => {
               <NavLinks>Message</NavLinks>
             </NavItem>
           </NavMenu>
-
           <NavButton>
             <Button
               onClick={() => {
@@ -154,9 +203,31 @@ const Navbar = (props) => {
             >
               Sign Up
             </Button>
-            <ImageIcon src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80" />
+            <ImageIcon
+              src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80"
+              onClick={() => setDropShow(!dropshow)}
+            />
           </NavButton>
         </NavbarContainer>
+        {dropshow && (
+          <DropDown>
+            <UserName>Ahmed</UserName>
+            <ListMenu>
+              <List>
+                <SettingLogo>
+                  <AiFillSetting />
+                </SettingLogo>
+                Settings
+              </List>
+              <List>
+                <LogOutLogo>
+                  <BiLogOut />
+                </LogOutLogo>
+                LogOut
+              </List>
+            </ListMenu>
+          </DropDown>
+        )}
       </Nav>
     </>
   );

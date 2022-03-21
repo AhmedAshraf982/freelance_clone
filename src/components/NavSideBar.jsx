@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import {FaTimes} from "react-icons/fa";
-import {Link as LinkS} from "react-scroll";
+import { FaTimes } from "react-icons/fa";
+import { Link as LinkS } from "react-scroll";
+import { Link as LinkR } from "react-router-dom";
 
 const SidebarContainer = styled.aside`
   position: fixed;
-  z-index: index 999;
+  z-index: 999;
   width: 100%;
   height: 100%;
-  background: #0d0d0d;
+  background: white;
   display: grid;
   align-items: center;
   top: 0;
@@ -19,98 +20,107 @@ const SidebarContainer = styled.aside`
 `;
 
 const CloseIcon = styled(FaTimes)`
-    color:#fff;
+  color: #aef5f5;
 `;
 
 const Icon = styled.div`
-
-    position:absolute;
-    top:1.2rem;
-    right:1.5rem;
-    background:transparent;
-    font-size:2rem;
-    cursor:pointer;
-    outline:none;
-`
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+  outline: none;
+`;
 
 const SidebarWrapper = styled.div`
-    color:#fff;
-`
+  color: #fff;
+`;
 
 const SidebarLink = styled(LinkS)`
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    font-size:1.5rem;
-    text-decoration:none;
-    list-styled:none;
-    transition:0.2s ease-in-out;
-    text-decoration:none;
-    color:#fff;
-    cursor: pointer;
-    &:hover{
-        color:#01bf71;
-        transition:0.2s ease-in-out;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  list-styled: none;
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+  color: #aef5f5;
+  cursor: pointer;
+  &:hover {
+    color: #60a8c4;
+    transition: 0.2s ease-in-out;
+  }
+`;
+
+const SidebarMenu = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 80px);
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    grid-template-rows: repeat(3, 60px);
+  }
 `;
 
 const SideBtnWrap = styled.div`
-    display:flex;
-    jsutify-content:center;
-`
-
-const SidebarRoute = styled.button`
-    borer-radius:50px;
-    background:#01bf71;
-    white-space:nowrap;
-    padding:16px 64px;
-    color:#010606;
-    font-size:16px;
-    outline:none;
-    border:none;
-    cursor:pointer;
-    transition: all 0.2s ease-in-out;
-    text-decoration:none;
-    &:hover{
-        transition:all 0.2s ease-in-out;
-        background:#fff;
-        color:#010606;
-    }
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
 `;
 
+const SidebarRoute = styled.button`
+  border-radius: 50px;
+  background: #fff;
+  padding: 16px 64px;
+  color: #aef5f5;
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #aef5f5;
+    color: #fff;
+  }
+`;
 
-const NavSideBar = () => {
-  return <SidebarContainer>
-      <Icon>
+const NavSideBar = (props) => {
+  return (
+    <SidebarContainer isOpen={props.isOpen} onClick={props.toggle}>
+      <Icon onClick={props.toggle}>
         <CloseIcon />
       </Icon>
       <SidebarWrapper>
-          <SidebarMenu>
-          <SidebarLink to="findjob">
-          Find Job
-          </SidebarLink>
-          </SidebarMenu>
-          <SidebarMenu>
-          <SidebarLink to="postjob">
-            PostJob
-          </SidebarLink>
-          </SidebarMenu>
-          <SidebarMenu>
-          <SidebarLink to="Message">
-            Message
-          </SidebarLink>
-          </SidebarMenu>
+        <SidebarMenu>
+          <SidebarLink to="findjob">Find Job</SidebarLink>
+          <SidebarLink to="postjob">PostJob</SidebarLink>
+          <SidebarLink to="Message">Message</SidebarLink>
+        </SidebarMenu>
         <SideBtnWrap>
-            <SidebarRoute>
+          <SidebarRoute
+            onClick={() => {
+              props.closeSignupModal(true);
+            }}
+          >
             Sign Up
-            </SidebarRoute>
-            <SidebarRoute>
+          </SidebarRoute>
+          <SidebarRoute
+            onClick={() => {
+              props.closeLoginModal(true);
+            }}
+          >
             Sign In
-            </SidebarRoute>
+          </SidebarRoute>
         </SideBtnWrap>
       </SidebarWrapper>
-  </SidebarContainer>;
+    </SidebarContainer>
+  );
 };
 
 export default NavSideBar;

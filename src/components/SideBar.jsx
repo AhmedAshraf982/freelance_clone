@@ -6,6 +6,11 @@ const Container = styled.div`
   flex-direction: column;
   background-color: #f1f2f4;
   height: 250px;
+  @media screen and (max-width: 768px) {
+    display: none;
+    transition: 0.8s all ease-in-out;
+    transform: translateX(-100%);
+  }
 `;
 
 const ContainerMenu = styled.div`
@@ -20,6 +25,27 @@ const SideItem = styled.p`
   }
 `;
 
+const SelectDropDown = styled.select`
+  display: none;
+  transition: 0.8s all ease-in-out;
+  transform: translateX(-100%);
+  @media screen and (max-width: 768px) {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    transform: translateX(0);
+    box-shadow: 0px 15px 10px -15px #aef5ff;
+    border: 2px solid black;
+    transition: 0.2s all ease-in-out;
+    font-size: 1.2rem;
+  }
+`;
+
+const OptionMenu = styled.option`
+  font-size: 1.1rem;
+`;
+
 const SideBar = () => {
   return (
     <>
@@ -30,6 +56,11 @@ const SideBar = () => {
           <SideItem>Password & Security</SideItem>
         </ContainerMenu>
       </Container>
+      <SelectDropDown>
+        <OptionMenu>Contact Info</OptionMenu>
+        <OptionMenu>Profile Settings</OptionMenu>
+        <OptionMenu>Password & Security</OptionMenu>
+      </SelectDropDown>
     </>
   );
 };

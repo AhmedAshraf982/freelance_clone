@@ -7,24 +7,37 @@ const Container = styled.div`
   height: 500px;
   width: 80%;
   margin-left: 2rem;
-  margin-top: 10rem;
+  margin-bottom: 8rem;
+  @media screen and (max-width: 768px) {
+    transition: 0.8s all ease-in-out;
+    width: 100%;
+    margin: 3rem 0;
+    margin-left: 0;
+  }
 `;
 
 const Heading = styled.h5`
   font-size: 1.2rem;
   font-weight: bold;
   padding: 2rem 2rem;
+  @media screen and (max-width: 768px) {
+    margin: 2rem 0 0 0;
+  }
 `;
 
 const AccountContainer = styled.div`
-  border: 1px solid grey;
+  border: 1px solid #aef5f5;
   border-radius: 5px;
   padding: 1rem 2rem;
-  background-color: antiquewhite;
+  background-color: #fff;
+  @media screen and (max-width: 768px) {
+    border-left: 0;
+    border-right: 0;
+  }
 `;
 
 const Title = styled.h5`
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #aef5f5;
   margin-bottom: 1rem;
   font-size: 1.1rem;
 `;
@@ -46,10 +59,12 @@ const LabelName = styled.p`
 const InputField = styled.input`
   width: 50%;
   padding: 1rem;
-`;
-
-const InputText = styled.textarea`
-  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #aef5f5;
+  @media screen and (max-width: 768px) {
+    padding: 0.5rem;
+    width: 65%;
+  }
 `;
 
 const FirstContainer = styled.div`
@@ -59,9 +74,9 @@ const FirstContainer = styled.div`
 `;
 
 const UpdateButton = styled.button`
-  border: none;
+  border: 1px solid white;
   border-radius: 160px;
-  background-color: #14a800;
+  background-color: #aef5f5;
   color: white;
   padding: 0.5rem 1rem;
   text-align: center;
@@ -72,16 +87,24 @@ const UpdateButton = styled.button`
 `;
 
 const CancelButton = styled.button`
-  border: 1px solid lightgrey;
+  border: 1px solid #aef5f5;
   border-radius: 160px;
   background-color: #fff;
-  color: #14a800;
+  color: #aef5f5;
   padding: 0.5rem 1rem;
   text-align: center;
   margin: 0.5rem auto 1.5rem auto;
   font-size: 15px;
   width: 160px;
   cursor: pointer;
+`;
+
+const InputText = styled.textarea`
+  padding: 1rem;
+  border-radius: 5px;
+  height: 65px;
+  width: 50%;
+  border: 1px solid #aef5f5;
 `;
 
 const ProfileSetting = () => {
@@ -98,7 +121,7 @@ const ProfileSetting = () => {
             </Group>
             <Group>
               <LabelName>About</LabelName>
-              <InputText rows="5" cols="50" value="Summmary.........." />
+              <InputText value="Summmary.........." />
             </Group>
             <Group>
               <LabelName>Skills</LabelName>

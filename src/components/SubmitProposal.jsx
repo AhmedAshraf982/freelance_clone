@@ -21,15 +21,23 @@ const JobDetails = styled.div`
   grid-template-rows: 0.5fr 2fr 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  border: 1px solid black;
+  border: 1px solid #87ceeb;
   border-radius: 5px;
   margin: auto;
-  background-color: whitesmoke;
+  background-color: #fff;
+  @media screen and (max-width: 768px) {
+    border-top: 1px solid #87ceeb;
+    border-bottom: 1px solid #87ceeb;
+    border-radius: 0px;
+    width: 100%;
+    transition: 0.8s all ease-in-out;
+    grid-template-rows: 0.5fr 3fr 1fr;
+  }
 `;
 const Heading = styled.div`
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #87ceeb;
   p {
-    margin: 1rem 0 1rem 4rem;
+    margin: 1.5rem 0 1rem 4rem;
     font-size: 1.2rem;
     color: #000;
     font-weight: bold;
@@ -41,10 +49,17 @@ const JobInfo = styled.div`
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #87ceeb;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 const JobDesc = styled.div`
-  border-right: 1px solid #000;
+  border-right: 1px solid #87ceeb;
+  @media screen and (max-width: 768px) {
+    border: none;
+  }
 `;
 const JobName = styled.div`
   margin: 1rem 0 1rem 4rem;
@@ -66,6 +81,10 @@ const Category = styled.p`
 const Posted = styled.p`
   color: rgba(0, 0, 0, 0.7);
   margin-left: 2rem;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 const Desc = styled.div`
   display: flex;
@@ -78,6 +97,9 @@ const JobType = styled.div`
   display: flex;
   flex-direction: column;
   margin: 2.5rem 2.5rem 0 2.5rem;
+  @media screen and (max-width: 768px) {
+    margin: 1rem 0 0 4rem;
+  }
 `;
 const Level = styled.div`
   display: flex;
@@ -105,12 +127,15 @@ const SkillAndExpert = styled.div`
     margin: 1rem 0 0 4rem;
     font-size: 1.1rem;
     font-weight: bold;
+    @media screen and (max-width: 768px) {
+      margin: 2rem 0 0 4rem;
+    }
   }
 `;
 const SkillDiv = styled.div`
   display: flex;
-  flex-wrap: wrap;
   margin: 0.2rem 4rem 2rem 4rem;
+  overflow-x: scroll;
 `;
 const SubmitProp = styled.div`
   display: grid;
@@ -121,16 +146,33 @@ const SubmitProp = styled.div`
   width: 80%;
   min-height: 400px;
   height: auto;
-  border: 1px solid black;
   margin: 2rem auto 0 auto;
-  background-color: whitesmoke;
+  border: 1px solid #87ceeb;
+  border-radius: 5px;
+  background-color: #fff;
+  @media screen and (max-width: 768px) {
+    border-radius: 0px;
+    width: 100%;
+    transition: 0.8s all ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 const HourRate = styled.div`
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #87ceeb;
   display: flex;
   align-items: center;
   p {
     margin-left: 3rem;
+  }
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    p {
+      margin: 0.5rem 3rem;
+    }
   }
 `;
 
@@ -141,9 +183,15 @@ const InputField = styled.input`
   text-align: right;
   padding-right: 0.5rem;
   background-color: transparent;
+  &:hover {
+    border: 1px solid #87ceeb;
+  }
+  @media screen and (max-width: 768px) {
+    margin: 0.5rem 3rem;
+  }
 `;
 const CoverLetter = styled.div`
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #87ceeb;
   margin: 1rem 0;
   p {
     margin-left: 2rem;
@@ -154,9 +202,15 @@ const CoverLetter = styled.div`
 const InputCover = styled.textarea`
   margin: 1rem 2rem;
   padding: 1rem;
+  min-height: 75px;
+  width: 80%;
+  border-radius: 12px;
+  @media screen and (max-width: 768px) {
+    margin: 1rem 1rem;
+  }
 `;
 const Attachments = styled.div`
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #87ceeb;
   margin: 1rem 0;
   p {
     margin-left: 2rem;
@@ -172,12 +226,15 @@ const GroupButton = styled.div`
   display: flex;
   align-items: center;
   margin: 1rem 2rem;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 const SubmitButton = styled.button`
-  border: none;
+  border: 1px solid #aef5ff;
   border-radius: 160px;
-  background-color: #14a800;
-  color: white;
+  background-color: #aef5ff;
+  color: #fff;
   padding: 0.5rem 1rem;
   text-align: center;
   margin: 0rem 2rem 0.5rem 0;
@@ -186,10 +243,10 @@ const SubmitButton = styled.button`
   cursor: pointer;
 `;
 const CancelButton = styled.button`
-  border: 1px solid lightgrey;
+  border: 1px solid #aef5ff;
   border-radius: 160px;
   background-color: #fff;
-  color: #14a800;
+  color: #aef5ff;
   padding: 0.5rem 1rem;
   text-align: center;
   margin: 0rem 2rem 0.5rem 0;
@@ -211,7 +268,9 @@ const SubmitProposal = () => {
             <JobName>Javascript/NodeJS Developer Needed</JobName>
             <Divi>
               <Category>Full Stack Development</Category>
-              <Posted>Posted Mar 19,2022</Posted>
+              <Posted>
+                Posted<span>Mar 19,2022</span>
+              </Posted>
             </Divi>
             <Desc>
               Looking for a javascript/node developer to build GraphQL resolvers
@@ -247,12 +306,12 @@ const SubmitProposal = () => {
       </JobDetails>
       <SubmitProp>
         <HourRate>
-          <p>Your Hours Rate:</p>
+          <p>Your Rate:</p>
           <InputField placeholder="$5.00" />
         </HourRate>
         <CoverLetter>
           <p>Cover Letter</p>
-          <InputCover rows="5" cols="100" required />
+          <InputCover required />
         </CoverLetter>
         <Attachments>
           <p>Attachments</p>

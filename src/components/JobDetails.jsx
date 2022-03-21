@@ -12,6 +12,10 @@ const Heading = styled.h5`
   font-size: 1.5rem;
   font-weight: 700;
   opacity: 0.9;
+  @media screen and (max-width: 768px) {
+    display: none;
+    transform: translateY(-100%);
+  }
 `;
 
 const Container = styled.div`
@@ -20,27 +24,40 @@ const Container = styled.div`
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  /* background-color: #254556; */
+  background-color: #fff;
   border-radius: 10px;
-  border: 1px solid rgba(10, 25, 35, 0.7);
+  border: 1px solid #87ceeb;
   opacity: 0.8;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 6px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    transition: 0.8s all ease;
+    border: none;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const LargeContainer = styled.div`
-  border-right: 1px solid rgba(10, 25, 35, 0.7);
+  border-right: 1px solid #87ceeb;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(7, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  @media screen and (max-width: 768px) {
+    transition: 0.8s all ease;
+    border: none;
+  }
 `;
 
 const JobDiv = styled.div`
-  border-bottom: 1px solid rgba(10, 25, 35, 0.7);
+  border-bottom: 1px solid #87ceeb;
 `;
 
 const JobTitle = styled.h5`
@@ -58,7 +75,7 @@ const Description = styled.p`
 `;
 
 const PriceAndLevel = styled.div`
-  border-bottom: 1px solid rgba(10, 25, 35, 0.7);
+  border-bottom: 1px solid #87ceeb;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -83,7 +100,7 @@ const ProjectType = styled.p`
 const SkillsAndExpert = styled.div`
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid rgba(10, 25, 35, 0.7);
+  border-bottom: 1px solid #87ceeb;
   align-items: flex-start;
 `;
 
@@ -136,7 +153,7 @@ const SmallContainer = styled.div`
 `;
 
 const FirstContainer = styled.div`
-  border-bottom: 1px solid rgba(10, 25, 35, 0.7);
+  border-bottom: 1px solid #87ceeb;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,29 +161,45 @@ const FirstContainer = styled.div`
 `;
 
 const SubmitButton = styled.button`
-  border: none;
+  border: 1px solid #ecf7fc;
   border-radius: 160px;
-  background-color: #14a800;
-  color: white;
+  background-color: #aef5ff;
+  color: #ecf7fc;
   padding: 0.5rem 1rem;
   text-align: center;
   margin: 1.5rem auto 0.5rem auto;
   font-size: 15px;
   width: 160px;
   cursor: pointer;
+  &:hover {
+    border: 1px solid #aef5ff;
+    background-color: #ecf7fc;
+    color: #aef5ff;
+  }
+  @media screen and (max-width: 768px) {
+    width: 80%;
+  }
 `;
 
 const BookMark = styled.button`
-  border: 1px solid lightgrey;
+  border: 1px solid #aef5ff;
   border-radius: 160px;
-  background-color: #fff;
-  color: #14a800;
+  background-color: #ecf7fc;
+  color: #aef5ff;
   padding: 0.5rem 1rem;
   text-align: center;
   margin: 0.5rem auto 1.5rem auto;
   font-size: 15px;
   width: 160px;
   cursor: pointer;
+  &:hover {
+    border: 1px solid #ecf7fc;
+    background-color: #aef5ff;
+    color: #ecf7fc;
+  }
+  @media screen and (max-width: 768px) {
+    width: 80%;
+  }
 `;
 
 const SecondContainer = styled.div`
@@ -264,7 +297,7 @@ const InputField = styled.input`
 
 const CopyLink = styled.p`
   margin-left: 2rem;
-  color: #14a800;
+  color: #aef5ff;
   cursor: pointer;
   &:hover {
     text-decoration: underline;
