@@ -5,6 +5,7 @@ import { Link as LinkS } from "react-scroll";
 import { FaBars } from "react-icons/fa";
 import { AiFillSetting } from "react-icons/ai";
 import { BiLogOut } from "react-icons/bi";
+import MessageDropDown from "./MessageDropDown";
 
 const Nav = styled.nav`
   height: 80px;
@@ -66,7 +67,7 @@ const NavMenu = styled.ul`
   align-items: center;
   margin-right: -22px;
   list-style: none;
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;
@@ -130,8 +131,9 @@ const DropDown = styled.div`
   position: absolute;
   top: 4rem;
   right: 10rem;
-  background: paleturquoise;
+  background: #fff;
   border-radius: 5px;
+  border: 2px solid #aef5ff;
   width: auto;
   min-width: 100px;
 `;
@@ -169,6 +171,7 @@ const LogOutLogo = styled.div`
 
 const Navbar = (props) => {
   const [dropshow, setDropShow] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
   return (
     <>
       <Nav>
@@ -185,7 +188,9 @@ const Navbar = (props) => {
               <NavLinks>Post Job</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks>Message</NavLinks>
+              <NavLinks onClick={() => setShowMessage(!showMessage)}>
+                Message
+              </NavLinks>
             </NavItem>
           </NavMenu>
           <NavButton>
@@ -229,6 +234,7 @@ const Navbar = (props) => {
           </DropDown>
         )}
       </Nav>
+      <MessageDropDown showMessage={showMessage} />
     </>
   );
 };

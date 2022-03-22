@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
 import { Link as LinkS } from "react-scroll";
 import { Link as LinkR } from "react-router-dom";
+import MessageDropDown from "./MessageDropDown";
 
 const SidebarContainer = styled.aside`
   position: fixed;
@@ -17,6 +18,10 @@ const SidebarContainer = styled.aside`
   transition: 0.3s ease-in-out;
   opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
   top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
+  @media screen and (min-width: 768px) {
+    top: -100;
+    display: none;
+  }
 `;
 
 const CloseIcon = styled(FaTimes)`
@@ -91,35 +96,49 @@ const SidebarRoute = styled.button`
 `;
 
 const NavSideBar = (props) => {
+  const [showMessage, setShowMessage] = useState(false);
+
+  const handleClose = () => {
+    setShowMessage(false);
+    props.toggle();
+  };
   return (
-    <SidebarContainer isOpen={props.isOpen} onClick={props.toggle}>
-      <Icon onClick={props.toggle}>
-        <CloseIcon />
-      </Icon>
-      <SidebarWrapper>
-        <SidebarMenu>
-          <SidebarLink to="findjob">Find Job</SidebarLink>
-          <SidebarLink to="postjob">PostJob</SidebarLink>
-          <SidebarLink to="Message">Message</SidebarLink>
-        </SidebarMenu>
-        <SideBtnWrap>
-          <SidebarRoute
-            onClick={() => {
-              props.closeSignupModal(true);
-            }}
-          >
-            Sign Up
-          </SidebarRoute>
-          <SidebarRoute
-            onClick={() => {
-              props.closeLoginModal(true);
-            }}
-          >
-            Sign In
-          </SidebarRoute>
-        </SideBtnWrap>
-      </SidebarWrapper>
-    </SidebarContainer>
+    <>
+      <SidebarContainer isOpen={props.isOpen} onClick={props.toggle}>
+        <Icon onClick={handleClose}>
+          <CloseIcon />
+        </Icon>
+        <SidebarWrapper>
+          <SidebarMenu>
+            <SidebarLink to="findjob">Find Job</SidebarLink>
+            <SidebarLink to="postjob">PostJob</SidebarLink>
+            <SidebarLink
+              to="postjob"
+              onClick={() => setShowMessage(!showMessage)}
+            >
+              Message
+            </SidebarLink>
+          </SidebarMenu>
+          <SideBtnWrap>
+            <SidebarRoute
+              onClick={() => {
+                props.closeSignupModal(true);
+              }}
+            >
+              Sign Up
+            </SidebarRoute>
+            <SidebarRoute
+              onClick={() => {
+                props.closeLoginModal(true);
+              }}
+            >
+              Sign In
+            </SidebarRoute>
+          </SideBtnWrap>
+        </SidebarWrapper>
+      </SidebarContainer>
+      <MessageDropDown showMessage={showMessage} own={true} />
+    </>
   );
 };
 

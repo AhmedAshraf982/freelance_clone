@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import UserDashBoard from "./components/UserDashBoard";
 import Message from "./components/Message";
 import NavSideBar from "./components/NavSideBar";
+import MessageDropDown from "./components/MessageDropDown";
 
 function App() {
   const [openSignin, setOpenSignin] = useState(false);
@@ -35,8 +36,10 @@ function App() {
           closeLoginModal={setOpenSignin}
           closeSignupModal={setOpenSignup}
         />
-        <Header />
-        <UserDashBoard />
+        {/* <MessageDropDown /> */}
+        <JobDetails />
+        {/* <Header />
+        <UserDashBoard /> */}
         {/* <Card /> */}
         {/* <JobDetails />
           <SubmitProposal />
