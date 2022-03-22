@@ -72,6 +72,7 @@ const FormGroup1 = styled.div`
   flex-direction: row;
   padding: 1rem;
   justify-content: space-between;
+  flex-wrap: wrap;
   @media screen and (max-width: 900px) {
     flex-direction: column;
     transition: 0.8s all ease-in-out;

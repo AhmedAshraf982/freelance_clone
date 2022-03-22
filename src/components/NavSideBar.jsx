@@ -104,32 +104,66 @@ const NavSideBar = (props) => {
   };
   return (
     <>
-      <SidebarContainer isOpen={props.isOpen} onClick={props.toggle}>
+      <SidebarContainer isOpen={props.isOpen} onClick={handleClose}>
         <Icon onClick={handleClose}>
           <CloseIcon />
         </Icon>
         <SidebarWrapper>
           <SidebarMenu>
-            <SidebarLink to="findjob">Find Job</SidebarLink>
-            <SidebarLink to="postjob">PostJob</SidebarLink>
+            <SidebarLink
+              to="findjob"
+              onClick={() => {
+                setShowMessage(false);
+                setshowNotification(false);
+              }}
+            >
+              Find Job
+            </SidebarLink>
+            <SidebarLink
+              to="postjob"
+              onClick={() => {
+                setShowMessage(false);
+                setshowNotification(false);
+              }}
+            >
+              PostJob
+            </SidebarLink>
             <SidebarLink
               to="message"
-              onClick={() => setShowMessage(!showMessage)}
+              onClick={() => {
+                setShowMessage(!showMessage);
+                setshowNotification(false);
+              }}
             >
               Message
             </SidebarLink>
             <SidebarLink
               to="notify"
-              onClick={() => setshowNotification(!showNotification)}
+              onClick={() => {
+                setshowNotification(!showNotification);
+                setShowMessage(false);
+              }}
             >
               Notification
             </SidebarLink>
           </SidebarMenu>
           <SideBtnWrap>
-            <SidebarRoute onClick={() => props.closeSignupModal(true)}>
+            <SidebarRoute
+              onClick={() => {
+                props.closeSignupModal(true);
+                setShowMessage(false);
+                setshowNotification(false);
+              }}
+            >
               Sign Up
             </SidebarRoute>
-            <SidebarRoute onClick={() => props.closeLoginModal(true)}>
+            <SidebarRoute
+              onClick={() => {
+                props.closeLoginModal(true);
+                setShowMessage(false);
+                setshowNotification(false);
+              }}
+            >
               Sign In
             </SidebarRoute>
           </SideBtnWrap>

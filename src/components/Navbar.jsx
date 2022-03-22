@@ -66,7 +66,7 @@ const MobileIcon = styled.div`
 const NavMenu = styled.ul`
   display: flex;
   align-items: center;
-  margin-top: 14px;
+  margin-top: 12px;
   margin-right: -22px;
   list-style: none;
   @media screen and (max-width: 768px) {
@@ -186,7 +186,12 @@ const Navbar = (props) => {
   return (
     <>
       <Nav onClick={() => setShowMessage(false)}>
-        <NavbarContainer>
+        <NavbarContainer
+          onClick={() => {
+            setShowMessage(false);
+            setshowNotification(false);
+          }}
+        >
           <Logo src="./logo.png" alt="logo" />
           <MobileIcon onClick={props.toggle}>
             <FaBars color="#023958" />
@@ -199,12 +204,24 @@ const Navbar = (props) => {
               <NavLinks>Post Job</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks onClick={() => setShowMessage(!showMessage)}>
+              <NavLinks
+                onClick={() => {
+                  setShowMessage(!showMessage);
+                  setshowNotification(false);
+                  setDropShow(false);
+                }}
+              >
                 Message
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks onClick={() => setshowNotification(!showNotification)}>
+              <NavLinks
+                onClick={() => {
+                  setshowNotification(!showNotification);
+                  setShowMessage(false);
+                  setDropShow(false);
+                }}
+              >
                 Notification
               </NavLinks>
             </NavItem>
@@ -226,7 +243,11 @@ const Navbar = (props) => {
             </Button>
             <ImageIcon
               src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80"
-              onClick={() => setDropShow(!dropshow)}
+              onClick={() => {
+                setDropShow(!dropshow);
+                setshowNotification(false);
+                setShowMessage(false);
+              }}
             />
           </NavButton>
         </NavbarContainer>
