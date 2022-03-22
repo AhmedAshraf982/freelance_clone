@@ -23,7 +23,7 @@ const Image = styled.img`
 const MessageText = styled.p`
   padding: 10px;
   border-radius: 20px;
-  background-color: ${(props) => (props.own ? "rgb(245,241,241)" : "#1877f2")};
+  background-color: ${(props) => (props.own ? "rgb(245,241,241)" : "#0c6ac1")};
   color: ${(props) => (props.own ? "black" : "white")};
   max-width: 300px;
 `;

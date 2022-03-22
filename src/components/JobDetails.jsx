@@ -26,7 +26,7 @@ const Container = styled.div`
   margin-right: auto;
   background-color: #fff;
   border-radius: 10px;
-  border: 1px solid #87ceeb;
+  border: 1px solid #0c6ca1;
   opacity: 0.8;
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -45,7 +45,7 @@ const Container = styled.div`
 `;
 
 const LargeContainer = styled.div`
-  border-right: 1px solid #87ceeb;
+  border-right: 1px solid #0c6ca1;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(7, 1fr);
   grid-column-gap: 0px;
@@ -57,7 +57,7 @@ const LargeContainer = styled.div`
 `;
 
 const JobDiv = styled.div`
-  border-bottom: 1px solid #87ceeb;
+  border-bottom: 1px solid #0c6ca1;
 `;
 
 const JobTitle = styled.h5`
@@ -75,7 +75,7 @@ const Description = styled.p`
 `;
 
 const PriceAndLevel = styled.div`
-  border-bottom: 1px solid #87ceeb;
+  border-bottom: 1px solid #0c6ca1;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -100,7 +100,7 @@ const ProjectType = styled.p`
 const SkillsAndExpert = styled.div`
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #87ceeb;
+  border-bottom: 1px solid #0c6ca1;
   align-items: flex-start;
 `;
 
@@ -153,7 +153,7 @@ const SmallContainer = styled.div`
 `;
 
 const FirstContainer = styled.div`
-  border-bottom: 1px solid #87ceeb;
+  border-bottom: 1px solid #0c6ca1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,9 +161,9 @@ const FirstContainer = styled.div`
 `;
 
 const SubmitButton = styled.button`
-  border: 1px solid #ecf7fc;
+  border: 1px solid #0c6ca1;
   border-radius: 160px;
-  background-color: #aef5ff;
+  background-color: #0c6ca1;
   color: #ecf7fc;
   padding: 0.5rem 1rem;
   text-align: center;
@@ -172,9 +172,9 @@ const SubmitButton = styled.button`
   width: 160px;
   cursor: pointer;
   &:hover {
-    border: 1px solid #aef5ff;
+    border: 1px solid #0c6ca1;
     background-color: #ecf7fc;
-    color: #aef5ff;
+    color: #0c6ca1;
   }
   @media screen and (max-width: 768px) {
     width: 80%;
@@ -182,10 +182,10 @@ const SubmitButton = styled.button`
 `;
 
 const BookMark = styled.button`
-  border: 1px solid #aef5ff;
+  border: 1px solid red;
   border-radius: 160px;
-  background-color: #ecf7fc;
-  color: #aef5ff;
+  background-color: #fff;
+  color: red;
   padding: 0.5rem 1rem;
   text-align: center;
   margin: 0.5rem auto 1.5rem auto;
@@ -193,9 +193,9 @@ const BookMark = styled.button`
   width: 160px;
   cursor: pointer;
   &:hover {
-    border: 1px solid #ecf7fc;
-    background-color: #aef5ff;
-    color: #ecf7fc;
+    border: 1px solid red;
+    background-color: red;
+    color: #fff;
   }
   @media screen and (max-width: 768px) {
     width: 80%;
@@ -203,7 +203,7 @@ const BookMark = styled.button`
 `;
 
 const SecondContainer = styled.div`
-  border-bottom: 1px solid rgba(10, 25, 35, 0.7);
+  border-bottom: 1px solid #0c6ca1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -297,7 +297,7 @@ const InputField = styled.input`
 
 const CopyLink = styled.p`
   margin-left: 2rem;
-  color: #aef5ff;
+  color: #0c6ca1;
   cursor: pointer;
   &:hover {
     text-decoration: underline;
@@ -347,7 +347,7 @@ const JobDetails = () => {
         <SmallContainer>
           <FirstContainer>
             <SubmitButton>Submit a Proposal</SubmitButton>
-            <BookMark>Save Job</BookMark>
+            <BookMark>Cancel</BookMark>
           </FirstContainer>
           <SecondContainer>
             <About>About the client</About>

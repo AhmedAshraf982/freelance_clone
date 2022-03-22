@@ -4,6 +4,7 @@ import { FaTimes } from "react-icons/fa";
 import { Link as LinkS } from "react-scroll";
 import { Link as LinkR } from "react-router-dom";
 import MessageDropDown from "./MessageDropDown";
+import NotificationDropDown from "./NotificationDropDown";
 
 const SidebarContainer = styled.aside`
   position: fixed;
@@ -25,7 +26,7 @@ const SidebarContainer = styled.aside`
 `;
 
 const CloseIcon = styled(FaTimes)`
-  color: #aef5f5;
+  color: #023958;
 `;
 
 const Icon = styled.div`
@@ -48,13 +49,12 @@ const SidebarLink = styled(LinkS)`
   justify-content: center;
   font-size: 1.5rem;
   text-decoration: none;
-  list-styled: none;
-  transition: 0.2s ease-in-out;
+  list-style: none;
   text-decoration: none;
-  color: #aef5f5;
+  color: #0c6ca1;
   cursor: pointer;
   &:hover {
-    color: #60a8c4;
+    color: #023958;
     transition: 0.2s ease-in-out;
   }
 `;
@@ -62,10 +62,10 @@ const SidebarLink = styled(LinkS)`
 const SidebarMenu = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 80px);
+  grid-template-rows: repeat(4, 80px);
   text-align: center;
   @media screen and (max-width: 768px) {
-    grid-template-rows: repeat(3, 60px);
+    grid-template-rows: repeat(4, 60px);
   }
 `;
 
@@ -78,28 +78,28 @@ const SideBtnWrap = styled.div`
 
 const SidebarRoute = styled.button`
   border-radius: 50px;
-  background: #fff;
+  background-color: #fff;
   padding: 16px 64px;
-  color: #aef5f5;
+  color: #0c6ca1;
   font-size: 1.5rem;
   outline: none;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
   text-decoration: none;
   margin-bottom: 1rem;
   &:hover {
-    transition: all 0.2s ease-in-out;
-    background: #aef5f5;
+    transition: 0.2s all ease-in-out;
+    background-color: #023958;
     color: #fff;
   }
 `;
 
 const NavSideBar = (props) => {
   const [showMessage, setShowMessage] = useState(false);
-
+  const [showNotification, setshowNotification] = useState(false);
   const handleClose = () => {
     setShowMessage(false);
+    setshowNotification(false);
     props.toggle();
   };
   return (
@@ -113,31 +113,30 @@ const NavSideBar = (props) => {
             <SidebarLink to="findjob">Find Job</SidebarLink>
             <SidebarLink to="postjob">PostJob</SidebarLink>
             <SidebarLink
-              to="postjob"
+              to="message"
               onClick={() => setShowMessage(!showMessage)}
             >
               Message
             </SidebarLink>
+            <SidebarLink
+              to="notify"
+              onClick={() => setshowNotification(!showNotification)}
+            >
+              Notification
+            </SidebarLink>
           </SidebarMenu>
           <SideBtnWrap>
-            <SidebarRoute
-              onClick={() => {
-                props.closeSignupModal(true);
-              }}
-            >
+            <SidebarRoute onClick={() => props.closeSignupModal(true)}>
               Sign Up
             </SidebarRoute>
-            <SidebarRoute
-              onClick={() => {
-                props.closeLoginModal(true);
-              }}
-            >
+            <SidebarRoute onClick={() => props.closeLoginModal(true)}>
               Sign In
             </SidebarRoute>
           </SideBtnWrap>
         </SidebarWrapper>
       </SidebarContainer>
-      <MessageDropDown showMessage={showMessage} own={true} />
+      <MessageDropDown showMessage={showMessage} />
+      <NotificationDropDown showNotification={showNotification} />
     </>
   );
 };

@@ -4,8 +4,7 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #f1f2f4;
-  height: 250px;
+  height: 200px;
   @media screen and (max-width: 768px) {
     display: none;
     transition: 0.8s all ease-in-out;
@@ -15,12 +14,16 @@ const Container = styled.div`
 
 const ContainerMenu = styled.div`
   margin: 1rem 2rem;
+  height: auto;
 `;
 
 const SideItem = styled.p`
   cursor: pointer;
   padding: 1rem 1rem;
+  color: #0c6ac1;
   &:hover {
+    background-color: #0c6ac1;
+    color: #fff;
     text-decoration: underline;
   }
 `;
@@ -35,7 +38,7 @@ const SelectDropDown = styled.select`
     width: 100%;
     height: 10%;
     transform: translateX(0);
-    box-shadow: 0px 15px 10px -15px #aef5ff;
+    box-shadow: 0px 15px 10px -15px #023958;
     border: 2px solid black;
     transition: 0.2s all ease-in-out;
     font-size: 1.2rem;

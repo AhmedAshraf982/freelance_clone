@@ -17,11 +17,10 @@ const Container = styled.div`
   grid-template-rows: repeat(3, 1fr);
   grid-row-gap: 6px;
   width: 100%;
-  background-color: lightblue;
-  border-top: 1px solid rgba(50, 250, 250, 0.5);
+  background-color: rgba(12, 106, 193, 0.4);
   margin-top: 4rem;
   padding: 4rem 2.5rem 0rem 5rem;
-  color: grey;
+  color: #fff;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -44,12 +43,12 @@ const ListContainer = styled.div`
 `;
 
 const LinkContainer = styled.div`
-  border-top: 1px solid rgba(50, 250, 250, 0.5);
+  border-top: 1px solid rgb(12, 106, 193);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 6px;
-  border-bottom: 1px solid rgba(50, 250, 250, 0.5);
+  border-bottom: 1px solid rgb(12, 106, 193);
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -64,6 +63,10 @@ const List = styled.ul`
   list-style: none;
   li {
     line-height: 26px;
+    text-decoration: none;
+    &:hover {
+      color: rgb(12, 106, 193);
+    }
   }
   @media screen and (max-width: 768px) {
     margin-bottom: 10px;
@@ -95,34 +98,55 @@ const MobileApp = styled.div`
 const FaIcon = styled(BsFacebook)`
   margin-left: 2.5rem;
   cursor: pointer;
+  &:hover {
+    color: rgb(12, 106, 193);
+  }
 `;
 
 const YtIcon = styled(AiFillYoutube)`
   margin-left: 2.5rem;
   cursor: pointer;
+  &:hover {
+    color: rgb(12, 106, 193);
+  }
 `;
 
 const InIcon = styled(AiFillInstagram)`
   margin-left: 2.5rem;
   cursor: pointer;
+  &:hover {
+    color: rgb(12, 106, 193);
+  }
 `;
 const LiIcon = styled(AiFillGithub)`
   margin-left: 2.5rem;
   cursor: pointer;
+  &:hover {
+    color: rgb(12, 106, 193);
+  }
 `;
 const TaIcon = styled(AiFillTwitterCircle)`
   margin-left: 2.5rem;
   cursor: pointer;
+  &:hover {
+    color: rgb(12, 106, 193);
+  }
 `;
 
 const ApIcon = styled(AiFillApple)`
   margin-left: 2.4rem;
   cursor: pointer;
+  &:hover {
+    color: rgb(12, 106, 193);
+  }
 `;
 
 const AIcon = styled(AiFillAndroid)`
   margin-left: 2.5rem;
   cursor: pointer;
+  &:hover {
+    color: rgb(12, 106, 193);
+  }
 `;
 
 const CopyRight = styled.div`

@@ -6,6 +6,7 @@ import { FaBars } from "react-icons/fa";
 import { AiFillSetting } from "react-icons/ai";
 import { BiLogOut } from "react-icons/bi";
 import MessageDropDown from "./MessageDropDown";
+import NotificationDropDown from "./NotificationDropDown";
 
 const Nav = styled.nav`
   height: 80px;
@@ -17,7 +18,7 @@ const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 10;
-  box-shadow: 0px 15px 10px -15px #aef5ff;
+  box-shadow: 0px 15px 10px -15px #0c6ca1;
   @media screen and (max-width: 960px) {
     height: 60px;
     transition: 0.8s all ease;
@@ -65,6 +66,7 @@ const MobileIcon = styled.div`
 const NavMenu = styled.ul`
   display: flex;
   align-items: center;
+  margin-top: 14px;
   margin-right: -22px;
   list-style: none;
   @media screen and (max-width: 768px) {
@@ -74,20 +76,26 @@ const NavMenu = styled.ul`
 
 const NavItem = styled.li`
   height: 80px;
+  text-decoration: none !important;
 `;
 
 const NavLinks = styled(LinkS)`
-  color: #94dbf8;
+  color: #0c6ca1;
   display: flex;
   align-items: center;
   padding: 0 1rem;
   height: 100%;
   font-size: 1.1rem;
-  text-decoration: none;
+  text-decoration: none !important;
   cursor: pointer;
-  &:active {
-    border-bottom: 3px solid #94dbf8;
+  &:hover {
+    color: #023958;
+    transform: scaleY(1.2);
+    transition: 0.3s all ease-in-out;
   }
+  /* &:active {
+    border-bottom: 1px solid #023958;
+  } */
 `;
 
 const NavButton = styled.div`
@@ -103,7 +111,7 @@ const Button = styled.button`
   outline: none;
   background-color: #fff;
   font-size: 16px;
-  color: #aef5ff;
+  color: #0c6ca1;
   margin-left: 1rem;
   padding: 10px 22px;
   border-radius: 50px;
@@ -113,7 +121,7 @@ const Button = styled.button`
   text-decoration: none;
   &:hover {
     transition: all 0.2s ease-in-out;
-    background-color: #aef5ff;
+    background-color: #0c6ca1;
     color: #fff;
   }
 `;
@@ -133,7 +141,7 @@ const DropDown = styled.div`
   right: 10rem;
   background: #fff;
   border-radius: 5px;
-  border: 2px solid #aef5ff;
+  border: 2px solid #0c6ca1;
   width: auto;
   min-width: 100px;
 `;
@@ -142,7 +150,8 @@ const UserName = styled.h3`
   text-align: center;
   font-size: 1rem;
   margin: 1rem 0 0.5rem 0;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #023958;
+  color: #0c6ca1;
 `;
 
 const ListMenu = styled.ul`
@@ -157,6 +166,7 @@ const List = styled.li`
   justify-content: flex-start;
   text-decoration: none;
   font-size: 1.1rem;
+  color: #0c6ca1;
 `;
 
 const SettingLogo = styled.div`
@@ -172,17 +182,18 @@ const LogOutLogo = styled.div`
 const Navbar = (props) => {
   const [dropshow, setDropShow] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+  const [showNotification, setshowNotification] = useState(false);
   return (
     <>
       <Nav onClick={() => setShowMessage(false)}>
         <NavbarContainer>
           <Logo src="./logo.png" alt="logo" />
           <MobileIcon onClick={props.toggle}>
-            <FaBars color="#aef5ff" />
+            <FaBars color="#023958" />
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks>Find Jon</NavLinks>
+              <NavLinks>Find Job</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks>Post Job</NavLinks>
@@ -190,6 +201,11 @@ const Navbar = (props) => {
             <NavItem>
               <NavLinks onClick={() => setShowMessage(!showMessage)}>
                 Message
+              </NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks onClick={() => setshowNotification(!showNotification)}>
+                Notification
               </NavLinks>
             </NavItem>
           </NavMenu>
@@ -235,6 +251,7 @@ const Navbar = (props) => {
         )}
       </Nav>
       <MessageDropDown showMessage={showMessage} />
+      <NotificationDropDown showNotification={showNotification} />
     </>
   );
 };

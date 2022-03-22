@@ -8,12 +8,12 @@ const Messenger = styled.div`
   display: flex;
 `;
 
-const ChatMenu = styled.div`
-  flex: 3.5;
-  @media screen and (max-width: 768px) {
-    flex: 2;
-  }
-`;
+// const ChatMenu = styled.div`
+//   flex: 3.5;
+//   @media screen and (max-width: 768px) {
+//     flex: 2;
+//   }
+// `;
 
 const ChatBox = styled.div`
   flex: 6.5;
@@ -22,27 +22,27 @@ const ChatBox = styled.div`
   }
 `;
 
-const ChatMenuWrapper = styled.div`
-  padding: 10px;
-  height: 100%;
-`;
+// const ChatMenuWrapper = styled.div`
+//   padding: 10px;
+//   height: 100%;
+// `;
 
-const InputField = styled.input`
-  width: 100%;
-  padding: 10px 0;
-  border: none;
-  border-bottom: 1px solid grey;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
+// const InputField = styled.input`
+//   width: 100%;
+//   padding: 10px 0;
+//   border: none;
+//   border-bottom: 1px solid grey;
+//   @media screen and (max-width: 768px) {
+//     display: none;
+//   }
+// `;
 
 const ChatBoxWrapper = styled.div`
   padding: 10px;
-  height: 100%;
+  height: 80vh;
   display: flex;
   flex-direction: column;
-  flex-direction: space-between;
+  justify-content: space-between;
   position: relative;
 `;
 
@@ -70,14 +70,14 @@ const SendButton = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: teal;
+  background-color: #0c6ac1;
   color: white;
 `;
 
 const Message = () => {
   return (
     <Messenger>
-      <ChatMenu>
+      {/* <ChatMenu>
         <ChatMenuWrapper>
           <InputField type="text" placeholder="Search" />
           <Conversation />
@@ -85,7 +85,7 @@ const Message = () => {
           <Conversation />
           <Conversation />
         </ChatMenuWrapper>
-      </ChatMenu>
+      </ChatMenu> */}
       <ChatBox>
         <ChatBoxWrapper>
           <ChatBoxTop>
@@ -97,6 +97,16 @@ const Message = () => {
             <Messages />
             <Messages />
             <Messages own={true} />
+            <Messages />
+            <Messages />
+            <Messages own={true} />
+            <Messages />
+            <Messages />
+            <Messages own={true} />
+            <Messages />
+            <Messages />
+            <Messages own={true} />
+            <Messages />
             <Messages />
             <Messages />
             <Messages own={true} />

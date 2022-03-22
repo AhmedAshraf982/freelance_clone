@@ -7,7 +7,7 @@ const Button = styled.button`
   padding: 0.3rem 0.6rem;
   margin-right: 0.6rem;
   margin-bottom: 0.5rem;
-  background-color: rgba(1, 5, 6, 0.5);
+  background-color: #0c6ca1;
 `;
 
 const ButtonSkill = () => {

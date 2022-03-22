@@ -5,8 +5,8 @@ const Container = styled.div`
   width: 60%;
   height: 200px;
   margin: 2rem 8.5rem 2rem;
-  border: 1px solid rgba(195, 10, 20, 0.2);
-  background-color: whitesmoke;
+  border: 1px solid #0c6ac1;
+  background-color: #fff;
   border-radius: 5px;
   @media screen and (max-width: 768px) {
     display: none;

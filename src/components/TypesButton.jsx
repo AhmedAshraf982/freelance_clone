@@ -8,7 +8,7 @@ const Button = styled.button`
   margin-right: 0.6rem;
   cursor: pointer;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #0c6ac1;
   }
 `;
 

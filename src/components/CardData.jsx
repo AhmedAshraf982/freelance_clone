@@ -12,7 +12,7 @@ const Card = styled.div`
   border-top: 1px solid rgba(0, 0, 50, 0.2);
   cursor: pointer;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #f4f6fc;
   }
 `;
 
@@ -20,10 +20,8 @@ const Title = styled.h5`
   margin: 2rem;
   font-size: 1.2rem;
   font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
   &:hover {
-    color: rgba(50, 20, 200, 1);
-    text-decoration: underline;
+    color: #0c6ac1;
   }
   @media screen and (max-width: 768px) {
     font-size: 1rem;

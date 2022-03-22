@@ -9,7 +9,29 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 1rem 5rem 0 auto;
-  border: 2px solid #aef5f5;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    transition: 0.8s all ease-in-out;
+  }
+`;
+
+const Heading = styled.h5`
+  text-align: left;
+  font-size: 1.1rem;
+  /* background-color: #0c6ac1; */
+  color: black;
+  padding: 1rem;
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    transition: 0.3s all ease-in-out;
+  }
+`;
+
+const MinContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid #0c6ac1;
   border-radius: 5px;
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -17,20 +39,6 @@ const Container = styled.div`
     border-radius: 0;
     transition: 0.8s all ease-in-out;
   }
-`;
-
-const Heading = styled.h5`
-  text-align: center;
-  font-size: 1.1rem;
-  background-color: #aef5f5;
-  color: black;
-  padding: 1rem;
-`;
-
-const MinContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
 `;
 
 const FormGroup = styled.div`
@@ -53,9 +61,9 @@ const InputField = styled.input`
   opacity: 0.9;
   font-weight: lighter;
   border-radius: 5px;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid #0c6ac1;
   &:hover {
-    border: 2px solid #aef5f5;
+    border: 1px solid #023958;
   }
 `;
 
@@ -82,9 +90,9 @@ const InputText = styled.textarea`
   font-weight: lighter;
   border-radius: 5px;
   height: 100px;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid #0c6ac1;
   &:hover {
-    border: 2px solid #aef5f5;
+    border: 1px solid #023958;
   }
 `;
 
@@ -98,14 +106,14 @@ const ButtonGroup = styled.div`
 const PostButton = styled.button`
   border: 1px solid transparent;
   padding: 1rem 2rem;
-  background-color: #aef5f5;
+  background-color: #0c6ac1;
   color: #fff;
   cursor: pointer;
   margin-right: 1rem;
   &:hover {
-    color: #aef5f5;
+    color: #0c6ac1;
     background-color: #fff;
-    border: 1px solid #aef5f5;
+    border: 1px solid #0c6ac1;
   }
 `;
 

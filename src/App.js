@@ -38,15 +38,13 @@ function App() {
           closeSignupModal={setOpenSignup}
         />
         <PostaJob />
-        {/* <MessageDropDown /> */}
-        {/* <JobDetails /> */}
-        {/* <Header />
-        <UserDashBoard /> */}
-        {/* <Card /> */}
-        {/* <JobDetails />
-          <SubmitProposal />
-          <UserDashBoard />
-          <Message /> */}
+        {/* <PostaJob />
+        <Header />
+        <UserDashBoard />
+        <Card />
+        <JobDetails />
+        <SubmitProposal />
+        <Message /> */}
         <Footer />
       </Router>
 

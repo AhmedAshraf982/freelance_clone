@@ -21,13 +21,13 @@ const JobDetails = styled.div`
   grid-template-rows: 0.5fr 2fr 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  border: 1px solid #87ceeb;
+  border: 1px solid #0c6ac1;
   border-radius: 5px;
   margin: auto;
   background-color: #fff;
   @media screen and (max-width: 768px) {
-    border-top: 1px solid #87ceeb;
-    border-bottom: 1px solid #87ceeb;
+    border-top: 1px solid #0c6ac1;
+    border-bottom: 1px solid #0c6ac1;
     border-radius: 0px;
     width: 100%;
     transition: 0.8s all ease-in-out;
@@ -35,7 +35,7 @@ const JobDetails = styled.div`
   }
 `;
 const Heading = styled.div`
-  border-bottom: 1px solid #87ceeb;
+  border-bottom: 1px solid #0c6ac1;
   p {
     margin: 1.5rem 0 1rem 4rem;
     font-size: 1.2rem;
@@ -49,14 +49,14 @@ const JobInfo = styled.div`
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  border-bottom: 1px solid #87ceeb;
+  border-bottom: 1px solid #0c6ac1;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
   }
 `;
 const JobDesc = styled.div`
-  border-right: 1px solid #87ceeb;
+  border-right: 1px solid #0c6ac1;
   @media screen and (max-width: 768px) {
     border: none;
   }
@@ -147,7 +147,7 @@ const SubmitProp = styled.div`
   min-height: 400px;
   height: auto;
   margin: 2rem auto 0 auto;
-  border: 1px solid #87ceeb;
+  border: 1px solid #0c6ac1;
   border-radius: 5px;
   background-color: #fff;
   @media screen and (max-width: 768px) {
@@ -160,7 +160,7 @@ const SubmitProp = styled.div`
   }
 `;
 const HourRate = styled.div`
-  border-bottom: 1px solid #87ceeb;
+  border-bottom: 1px solid #0c6ac1;
   display: flex;
   align-items: center;
   p {
@@ -184,14 +184,14 @@ const InputField = styled.input`
   padding-right: 0.5rem;
   background-color: transparent;
   &:hover {
-    border: 1px solid #87ceeb;
+    border: 1px solid #0c6ac1;
   }
   @media screen and (max-width: 768px) {
     margin: 0.5rem 3rem;
   }
 `;
 const CoverLetter = styled.div`
-  border-bottom: 1px solid #87ceeb;
+  border-bottom: 1px solid #0c6ac1;
   margin: 1rem 0;
   p {
     margin-left: 2rem;
@@ -210,7 +210,7 @@ const InputCover = styled.textarea`
   }
 `;
 const Attachments = styled.div`
-  border-bottom: 1px solid #87ceeb;
+  border-bottom: 1px solid #0c6ac1;
   margin: 1rem 0;
   p {
     margin-left: 2rem;
@@ -231,28 +231,38 @@ const GroupButton = styled.div`
   }
 `;
 const SubmitButton = styled.button`
-  border: 1px solid #aef5ff;
+  border: 1px solid #0c6ca1;
   border-radius: 160px;
-  background-color: #aef5ff;
-  color: #fff;
+  background-color: #0c6ca1;
+  color: #ecf7fc;
   padding: 0.5rem 1rem;
   text-align: center;
   margin: 0rem 2rem 0.5rem 0;
   font-size: 15px;
   width: 160px;
   cursor: pointer;
+  &:hover {
+    border: 1px solid #0c6ca1;
+    background-color: #ecf7fc;
+    color: #0c6ca1;
+  }
 `;
 const CancelButton = styled.button`
-  border: 1px solid #aef5ff;
+  border: 1px solid red;
   border-radius: 160px;
   background-color: #fff;
-  color: #aef5ff;
+  color: red;
   padding: 0.5rem 1rem;
   text-align: center;
   margin: 0rem 2rem 0.5rem 0;
   font-size: 15px;
   width: 160px;
   cursor: pointer;
+  &:hover {
+    border: 1px solid red;
+    background-color: red;
+    color: #fff;
+  }
 `;
 
 const SubmitProposal = () => {
