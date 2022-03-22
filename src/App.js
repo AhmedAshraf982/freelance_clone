@@ -12,6 +12,7 @@ import UserDashBoard from "./components/UserDashBoard";
 import Message from "./components/Message";
 import NavSideBar from "./components/NavSideBar";
 import MessageDropDown from "./components/MessageDropDown";
+import PostaJob from "./components/PostaJob";
 
 function App() {
   const [openSignin, setOpenSignin] = useState(false);
@@ -36,8 +37,9 @@ function App() {
           closeLoginModal={setOpenSignin}
           closeSignupModal={setOpenSignup}
         />
+        <PostaJob />
         {/* <MessageDropDown /> */}
-        <JobDetails />
+        {/* <JobDetails /> */}
         {/* <Header />
         <UserDashBoard /> */}
         {/* <Card /> */}

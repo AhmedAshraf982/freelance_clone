@@ -174,7 +174,7 @@ const Navbar = (props) => {
   const [showMessage, setShowMessage] = useState(false);
   return (
     <>
-      <Nav>
+      <Nav onClick={() => setShowMessage(false)}>
         <NavbarContainer>
           <Logo src="./logo.png" alt="logo" />
           <MobileIcon onClick={props.toggle}>
