@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -27,11 +27,24 @@ const UserName = styled.p`
 `;
 
 const Header = () => {
+  const [date, setDate] = useState(new window.Date());
+  useEffect(() => {
+    setDate(new window.Date());
+  }, [new window.Date()]);
   return (
     <>
       <Container>
-        <Date>Saturday, March 19th</Date>
-        <Timing>Good Evening,</Timing>
+        <Date>
+          {date.toLocaleString("default", { month: "long" })} {date.getDate()},{" "}
+          {date.getFullYear()}
+        </Date>
+        <Timing>
+          {date.getHours() >= 0 && date.getHours() < 12
+            ? "Good Morning"
+            : date.getHours() >= 12 && date.getHours() <= 17
+            ? "Good Afternoon!"
+            : "Good Evening"}
+        </Timing>
         <UserName>Ahmed A.</UserName>
       </Container>
     </>

@@ -14,6 +14,7 @@ import NavSideBar from "./components/NavSideBar";
 import MessageDropDown from "./components/MessageDropDown";
 import PostaJob from "./components/PostaJob";
 import JobSubmitPage from "./components/JobSubmitPage";
+import CurrentJobs from "./components/CurrentJobs";
 
 function App() {
   const [openSignin, setOpenSignin] = useState(false);
@@ -38,7 +39,10 @@ function App() {
           closeLoginModal={setOpenSignin}
           closeSignupModal={setOpenSignup}
         />
-        <JobSubmitPage />
+        <Header />
+        {/* <CurrentJobs />
+        <Card /> */}
+        {/* <JobSubmitPage /> */}
         {/* <PostaJob />
         <Header />
         <UserDashBoard />

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import CardData from "./CardData";
+import CurrentJob from "./CurrentJob";
 
 const Container = styled.div`
   width: 80%;
-  height: 100%;
+  height: 50%;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: auto;
@@ -26,7 +26,7 @@ const Container = styled.div`
 
 const Heading = styled.h5`
   text-align: left;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   /* background-color: #0c6ac1; */
   color: black;
   padding: 1rem;
@@ -36,22 +36,36 @@ const Heading = styled.h5`
   }
 `;
 
-const Card = () => {
+const MinContainer = styled.div`
+  display: flex;
+  height: 250px;
+  overflow-y: scroll;
+  flex-direction: column;
+  padding: 1rem;
+  border-top: 1px solid #0c6ac1;
+  border-radius: 0px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    transition: 0.8s all ease-in-out;
+  }
+`;
+
+const CurrentJobs = () => {
+  const [arr, setarr] = useState([]);
   return (
     <>
-      <Container>
-        <Heading>Job List</Heading>
-        <CardData></CardData>
-        <CardData></CardData>
-        <CardData></CardData>
-        <CardData></CardData>
-        <CardData></CardData>
-        <CardData></CardData>
-        <CardData></CardData>
-        <CardData></CardData>
-      </Container>
+      {arr.length == 0 && (
+        <Container>
+          <Heading>Current Jobs</Heading>
+          <MinContainer>
+            <CurrentJob />
+          </MinContainer>
+        </Container>
+      )}
     </>
   );
 };
 
-export default Card;
+export default CurrentJobs;
